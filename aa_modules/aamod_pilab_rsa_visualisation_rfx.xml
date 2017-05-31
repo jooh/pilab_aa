@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='study' desc='visualise RSA RFX result' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            <permanenceofoutput>3</permanenceofoutput>
+
+            <!-- path to custom plot function -->
+            <pluginpath></pluginpath>
+            <runstandardplots>1</runstandardplots>
+
+            <!-- arguments for plot_lindisc -->
+            <!-- arguments for roidata2figure -->
+            <roidataargs>
+                <roiind></roiind>
+                <conind>nocontrasts</conind>
+                <restarget>mean</restarget>
+                <grouptarget></grouptarget>
+                <errtarget>sterr</errtarget>
+                <axisscale></axisscale>
+                <xscalefactor></xscalefactor>
+                <barwidth></barwidth>
+                <fsize></fsize>
+                <facecolor></facecolor>
+                <edgecolor></edgecolor>
+                <groupmarkerstyle></groupmarkerstyle>
+                <groupmarkersize></groupmarkersize>
+                <groupfacecolor></groupfacecolor>
+                <groupedgecolor></groupedgecolor>
+                <noiseind></noiseind>
+                <noisecolor></noisecolor>
+                <precision></precision>
+                <specialval></specialval>
+                <specialtick></specialtick>
+                <docontrasts></docontrasts>
+                <dozerotest></dozerotest>
+                <xticklabels></xticklabels>
+                <ptarget></ptarget>
+                <baseline></baseline>
+                <ylab><item>mean</item><item>\pm1 standard error</item></ylab>
+                <padding></padding>
+                <removeunderscore></removeunderscore>
+            </roidataargs>
+            
+            <inputstreams>
+                <stream>pilab_result_rfx</stream>
+                <stream>pilab_result_group</stream>
+                <stream>pilab_rsapredictors</stream>
+            </inputstreams>
+            <outputstreams>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

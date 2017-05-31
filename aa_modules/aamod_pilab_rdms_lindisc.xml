@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' desc='compute linear discriminant-based RDMs for pilab Volume' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            <permanenceofoutput>3</permanenceofoutput>
+
+            <split></split>
+            <cvsplit></cvsplit>
+            <glmclass>GLM</glmclass>
+            <glmvarargs>
+                <item></item>
+            </glmvarargs>
+            <crossvalidate>1</crossvalidate>
+            <sterrunits>0</sterrunits>
+            <minvoxeln>0</minvoxeln>
+            <batchsize>5000</batchsize>
+            <setclass></setclass>
+            <crosscon></crosscon>
+            <searchvol>0</searchvol>
+            <demean>0</demean>
+            <nperms>0</nperms>
+            
+            <inputstreams>
+                <stream>pilab_epi</stream>
+                <stream>pilab_design</stream>
+                <stream>pilab_rois</stream>
+            </inputstreams>
+            <outputstreams>
+                <stream>pilab_data_rdms_sess</stream>
+                <stream>pilab_data_rdms_mean</stream>
+                <stream>pilab_data_rdms_nulldist</stream>
+                <stream>pilab_data_rdms_sessnulldist</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

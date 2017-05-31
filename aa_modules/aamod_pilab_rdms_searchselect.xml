@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' desc='compute searchlight-tuned ROI RDMs' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            <permanenceofoutput>3</permanenceofoutput>
+
+            <roiroot></roiroot>
+            <subdir></subdir>
+            <predictorfun></predictorfun>
+            <removepredictorinds></removepredictorinds>
+            <selectpredictorinds></selectpredictorinds>
+
+            <!-- arguments for roidata2rdmvol_lindisc_searchselect -->
+            <maskns>1 10 100 1000</maskns>
+            <rsaclass>RankRSA</rsaclass>
+            <rsaclassargs></rsaclassargs>
+            <split></split>
+            <subsplit></subsplit>
+            <cvsplit></cvsplit>
+            <glmclass>GLM</glmclass>
+            <glmvarargs>
+                <item></item>
+            </glmvarargs>
+            <crossvalidate>1</crossvalidate>
+            <sterrunits>1</sterrunits>
+            <minvoxeln>0</minvoxeln>
+            <setclass></setclass>
+            <crosscon></crosscon>
+            
+            <inputstreams>
+                <stream>pilab_epi</stream>
+                <stream>pilab_design</stream>
+                <stream>pilab_rois</stream>
+                <stream>pilab_rsapredictors</stream>
+            </inputstreams>
+            <outputstreams>
+                <stream>pilab_data_rdms_sess</stream>
+                <stream>pilab_data_rdms_mean</stream>
+                <stream>pilab_rois_searchselect</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

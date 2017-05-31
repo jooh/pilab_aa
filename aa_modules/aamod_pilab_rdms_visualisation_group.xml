@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='study' desc='visualise group ROI RDMs' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>3</permanenceofoutput>
+
+            <!-- for plotrdms_batch -->
+            <rowind></rowind>
+            <colind></colind>
+            <nrows>2</nrows>
+            <cmap></cmap>
+            <gridlines></gridlines>
+            <gridcolor></gridcolor>
+            <ranktransform>1</ranktransform>
+
+            <!-- for here -->
+            <maxn>200</maxn>
+            <pluginpath></pluginpath>
+            <mtarget>mean</mtarget>
+            <groupmtarget>d</groupmtarget>
+            <runstandardplots>1</runstandardplots>
+
+            <inputstreams>
+                <stream>pilab_result_group</stream>
+                <stream>pilab_result_rfx</stream>
+                <stream>pilab_stimuli</stream>
+            </inputstreams>
+            <outputstreams>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

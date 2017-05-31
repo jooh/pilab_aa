@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' desc='EPIs and GLM design matrix to pilab volumes' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>3</permanenceofoutput>
+
+            <maskbybright>0</maskbybright>
+            <brainthresh>99 .5</brainthresh>
+            <ignorelabels></ignorelabels>
+            <blockmode>0</blockmode>
+
+            <inputstreams>
+                <stream>pilab_mask</stream>
+                <!-- NB, we get volumes out of the (modified) SPM, not from
+                     epi stream -->
+                <stream>firstlevel_spm</stream>
+            </inputstreams>
+            <outputstreams>
+                <stream>pilab_epi</stream>
+                <stream>pilab_design</stream>
+                <stream>pilab_mask</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

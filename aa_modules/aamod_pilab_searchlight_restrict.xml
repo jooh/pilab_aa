@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' desc='restrict analysis to reasonably sized searchlights' modality='MRI'>
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>5</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>3</permanenceofoutput>
+            
+            <minvox>10</minvox>
+            <maxvox>Inf</maxvox>
+            <minradius>0</minradius>
+            <maxradius>50</maxradius>
+            <inputstreams>
+                <stream>pilab_rois</stream>
+                <stream>pilab_searchlight_radius</stream>
+                <stream>pilab_searchlight_nvox</stream>
+                <stream>pilab_searchlight_nspheres</stream>
+                <stream>pilab_mask</stream>
+            </inputstreams>
+            
+            <outputstreams>
+                <stream>pilab_rois</stream>
+                <stream>pilab_searchlight_radius</stream>
+                <stream>pilab_searchlight_nvox</stream>
+                <stream>pilab_searchlight_nspheres</stream>
+                <stream>pilab_mask</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

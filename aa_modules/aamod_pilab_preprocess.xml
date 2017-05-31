@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' desc='preprocess pilab epivol and designvol instances' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            <permanenceofoutput>3</permanenceofoutput>
+
+            <!-- match sample size (necessary for e.g. permuteruns) -->
+            <matchn>0</matchn>
+
+            <!-- trend removal -->
+            <covariatedeg></covariatedeg>
+            <medianfilter></medianfilter>
+            <sgdetrend>0</sgdetrend>
+            <sgolayK></sgolayK>
+            <sgolayF></sgolayF>
+
+            <!-- scaling -->
+            <zscore>0</zscore>
+            <percentsignal>0</percentsignal>
+
+            <!-- other covariate removal -->
+            <targetlabels></targetlabels>
+            <ignorelabels></ignorelabels>
+
+            <!-- downcasting to lower precision -->
+            <setclass></setclass>
+
+            <!-- sorting of regressors -->
+            <resortind></resortind>
+            
+            <inputstreams>
+                <stream>pilab_epi</stream>
+                <stream>pilab_design</stream>
+            </inputstreams>
+            <outputstreams>
+                <stream>pilab_epi</stream>
+                <stream>pilab_design</stream>
+            </outputstreams>
+            
+        </currenttask>
+    </tasklist>
+</aap>

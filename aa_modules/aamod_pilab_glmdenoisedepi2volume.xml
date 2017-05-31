@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aap>
+    <tasklist>
+        <currenttask domain='subject' desc='construct glmdenoised EPI and design pilab volumes' modality='MRI'>
+            
+            <qsub>
+                <timeBase>0.5</timeBase>
+                <memoryBase>0.3</memoryBase>
+            </qsub>
+            
+            <permanenceofoutput>3</permanenceofoutput>
+            <!-- feature selection. By default we only use EPI intensity
+                 masking since this is reasonably orthogonal. If strong
+                 independence is less of a concern enabling masking by
+                 crossvalidation r2 and mean response may also help -->
+            <minr2>-Inf</minr2>
+            <maskbybright>1</maskbybright>
+            <maskbymean>0</maskbymean>
+            <!-- mask out bad voxels within each split, ie, do feature
+                 selection inside each split as well as across splits -->
+            <nanmask>1</nanmask>
+
+            <inputstreams>
+                <stream>glmdenoise_results</stream>
+                <stream>glmdenoise_epi</stream>
+                <stream>pilab_mask</stream>
+            </inputstreams>
+            <outputstreams>
+                <stream>pilab_epi</stream>
+                <stream>pilab_design</stream>
+                <stream>pilab_mask</stream>
+            </outputstreams>
+        </currenttask>
+    </tasklist>
+</aap>
