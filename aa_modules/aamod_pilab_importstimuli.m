@@ -51,11 +51,15 @@ switch task
         end
 
         % Also make a quick diagnostic figure
-        fighand = showimages(stimuli,[],ts.plotdims,[],ts.donumbers);
-        figout = fullfile(pidir,...
-            'diagnostic_pilab_stimuli.png');
-        print(figout,'-dpng','-r900');
-        close(fighand);
+        try
+            fighand = showimages(stimuli,[],ts.plotdims,[],ts.donumbers);
+            figout = fullfile(pidir,...
+                'diagnostic_pilab_stimuli.png');
+            print(figout,'-dpng','-r900');
+            close(fighand);
+        catch
+            aas_log(aap,false,'diagnostic figure failed');
+        end
     case 'checkrequirements'
     otherwise
         aas_log(aap,1,sprintf('Unknown task %s',task));
