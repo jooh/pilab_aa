@@ -33,28 +33,36 @@ switch task
         aap=aas_desc_outputs(aap,'pilab_mask_group',VO.fname);
 
         % make a diagnostic figure
-        F = figure;
-        np = ceil(sqrt(nsub+1));
-        for s = 1:nsub
-            subplot(np,np,s);
-            % 2 where subject overlaps groupmask, 1 where subject mask is
-            % getting cropped (subject but no group). The converse case
-            % (group but not subject) is impossible since we intersect
-            % rather than take the union.
-            imagesc(makeimagestack(double(xyz(:,:,:,s)) + ...
-                double(groupmask)));
+        try
+            F = figure;
+            np = ceil(sqrt(nsub+1));
+            for s = 1:nsub
+                subplot(np,np,s);
+                % 2 where subject overlaps groupmask, 1 where subject mask is
+                % getting cropped (subject but no group). The converse case
+                % (group but not subject) is impossible since we intersect
+                % rather than take the union.
+                imagesc(makeimagestack(double(xyz(:,:,:,s)) + ...
+                    double(groupmask)));
+                axis equal;
+                axis off;
+                subname = aap.acq_details.subjects(s).mriname;
+                if iscell(subname)
+                    subname = subname{1};
+                end
+                title(sprintf('%d: %s',s,aap.acq_details.subjects(s).mriname));
+            end
+            subplot(np,np,nsub+1);
+            imagesc(makeimagestack(groupmask));
             axis equal;
             axis off;
-            title(sprintf('%d: %s',s,aap.acq_details.subjects(s).mriname));
+            title('group intersection');
+            printstandard(fullfile(pidir,'diagnostic_mask_group'));
+            close(F);
+            drawnow;
+        catch
+            aas_log(aap,false,'could not generate diagnostic figure');
         end
-        subplot(np,np,nsub+1);
-        imagesc(makeimagestack(groupmask));
-        axis equal;
-        axis off;
-        title('group intersection');
-        printstandard(fullfile(pidir,'diagnostic_mask_group'));
-        close(F);
-        drawnow;
 
     case 'checkrequirements'
         
