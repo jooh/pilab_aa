@@ -28,6 +28,7 @@
                 <stream>pilab_stimuli</stream>
             </inputstreams>
             <outputstreams>
+                <stream></stream>
             </outputstreams>
             
         </currenttask>
