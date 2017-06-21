@@ -4,11 +4,11 @@ with distributed batch processing and provenance functionality from [automatic
 analysis](https://github.com/rhodricusack/automaticanalysis) 5 (AA).
 
 # dependencies
-* MATLAB R2013A (newer Matlab's will -generally- work but you may bump into
+* MATLAB R2013A (newer versions will *generally* work but you may bump into
   problems during the visualisation modules since we don't yet support the new
   handle graphics system introduced in R2014B).
 * [automatic analysis](https://github.com/rhodricusack/automaticanalysis) (see
-  also [my fork](https://github.com/rhodricusack/automaticanalysis) for the
+  also [my fork](https://github.com/jooh/automaticanalysis) for the
   bleeding edge version)
 * [pilab](https://github.com/jooh/pilab)
 
