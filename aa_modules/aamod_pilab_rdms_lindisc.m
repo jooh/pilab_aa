@@ -41,7 +41,7 @@ switch task
         end
 
         % check that parfor is available
-        if ~matlabpool('size')
+        if ~hasparpool
             warning('no matlabpool available')
         end
 
