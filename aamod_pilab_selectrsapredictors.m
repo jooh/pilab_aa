@@ -8,7 +8,7 @@ switch task
 
     case 'doit'
         % find subject name
-        subname = aap.acq_details.subjects(subj).mriname;
+        subname = aap.acq_details.subjects(subj).subjname;
 
         rdmpath = aas_getfiles_bystream(aap,subj,'pilab_rsapredictors');
         rdms_org = loadbetter(rdmpath);

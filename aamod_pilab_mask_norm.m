@@ -46,11 +46,11 @@ switch task
                     double(groupmask)));
                 axis equal;
                 axis off;
-                subname = aap.acq_details.subjects(s).mriname;
+                subname = aap.acq_details.subjects(s).subjname;
                 if iscell(subname)
                     subname = subname{1};
                 end
-                title(sprintf('%d: %s',s,aap.acq_details.subjects(s).mriname));
+                title(sprintf('%d: %s',s,aap.acq_details.subjects(s).subjname));
             end
             subplot(np,np,nsub+1);
             imagesc(makeimagestack(groupmask));

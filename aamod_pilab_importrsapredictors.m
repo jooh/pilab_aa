@@ -10,7 +10,7 @@ switch task
 
     case 'doit'
         % find subject name
-        subname = aap.acq_details.subjects(subj).mriname;
+        subname = aap.acq_details.subjects(subj).subjname;
 
         % get stimuli
         spath = aas_getfiles_bystream(aap,subj,'pilab_stimuli');

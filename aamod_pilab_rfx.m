@@ -17,7 +17,7 @@ switch task
             subres(s) = loadbetter(aas_getfiles_bystream(aap,s,...
                 'pilab_result'));
         end
-        names = {aap.acq_details.subjects.mriname};
+        names = {aap.acq_details.subjects.subjname};
         [subres.name] = names{:};
 
         args = {'nperm',ts.nperm,...

@@ -45,7 +45,7 @@ switch task
         % sort out masks
         % find roi masks (possibly split-specific)
         roidir = fullfile(ts.roiroot,...
-            aap.acq_details.subjects(subj).mriname);
+            aap.acq_details.subjects(subj).subjname);
         if isempty(ts.subdir)
             % simples
             maskvol = roidir2vol(roidir);

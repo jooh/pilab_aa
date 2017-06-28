@@ -23,7 +23,7 @@ switch task
                 disvol.meta.features.nfeatures,'tail',...
                 {repmat({'right'},[disvol.nsamples,1])});
         end
-        names = {aap.acq_details.subjects.mriname};
+        names = {aap.acq_details.subjects.subjname};
         [subres.name] = names{:};
 
         logstr('running roidata_rfx with %d subjects \n',nsub);

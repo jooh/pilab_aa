@@ -26,7 +26,7 @@ switch task
             bootres{s} = loadbetter(aas_getfiles_bystream(aap,s,...
                 'pilab_rsa_bootdist'));
         end
-        names = {aap.acq_details.subjects.mriname};
+        names = {aap.acq_details.subjects.subjname};
         [subres.name] = names{:};
 
         if ~isempty(ts.varsmoothfwhm)

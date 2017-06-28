@@ -9,7 +9,7 @@ switch task
 
     case 'doit'
         % find subject name
-        subname = aap.acq_details.subjects(subj).mriname;
+        subname = aap.acq_details.subjects(subj).subjname;
         ts = aap.tasklist.currenttask.settings;
 
         stimuli = feval(ts.stimfun,subname);
