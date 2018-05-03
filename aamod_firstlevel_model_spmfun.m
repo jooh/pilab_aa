@@ -1,6 +1,6 @@
-% AA module - collapse predictors in SPM.mat
-% [aap,resp]=aamod_firstlevel_collapsepredictors(aap,task,subj)
-function [aap,resp]=aamod_firstlevel_collapsepredictors(aap,task,subj)
+% AA module - apply arbitrary function to SPM.mat
+% [aap,resp]=aamod_firstlevel_model_spmfun(aap,task,subj)
+function [aap,resp]=aamod_firstlevel_model_spmfun(aap,task,subj)
 
 resp='';
 
